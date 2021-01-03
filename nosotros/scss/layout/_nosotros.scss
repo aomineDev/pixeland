@@ -1,0 +1,91 @@
+// NOSOTROS
+
+.background {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	background-image: url('../img/background.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: repeat-x;
+}
+.sun {
+	position: absolute;
+	left: -70px;
+	top: -70px;
+	max-width: 320px;
+	width: 100%;
+	@include mobile($bp-xs) {
+		left: -80px;
+		top: -80px;
+		max-width: 400px;
+	}
+	@include mobile($bp-sm) {
+		left: -100px;
+		top: -100px;
+		max-width: 500px;
+	}
+	@include mobile($bp-md) {
+		max-width: 600px;
+		transition: .3s;
+		transform: scale(.95);
+		&:hover {
+			transform: scale(1);
+		}
+	}
+}
+.world {
+	position: absolute;
+	right: 0;
+	top: 25%;
+	max-width: 150px;
+	width: 40%;
+	@include mobile($bp-xs) {
+		top: 20%;
+		right: 2%;
+		max-width: 200px;
+	}
+	@include mobile($bp-sm) {
+		max-width: 245px;
+	}
+	@include mobile($bp-md) {
+		max-width: 289px;
+		transition: .3s;
+		transform: scale(.95);
+		&:hover {
+			transform: scale(1);
+		}
+	}
+}
+.nixeAstronauta {
+	position: absolute;
+	left: 50%;
+	top: 80%;
+	transform: translate(-50%, -50%);
+	max-width: 208px;
+	max-height: 240px;
+	@include mobile($bp-sm) {
+		max-width: 260px;
+		max-height: 300px;
+	}
+	@include mobile($bp-lg) {
+		max-width: 312px;
+		max-height: 360px;
+	}
+	@include mobile($bp-lg-1) {
+		max-width: 433px;
+		max-height: 499px;
+	}
+	&-img {
+		animation: animateNixe 10s linear infinite alternate;
+	}
+}
+@keyframes animateNixe {
+	from { 
+		transform: rotate(0) translate(-120%) rotate(0);
+	}
+	to { 
+		transform: rotate(180deg) translate(-120%) rotate(180deg);
+	}
+}
